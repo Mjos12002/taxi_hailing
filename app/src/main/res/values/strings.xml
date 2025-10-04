@@ -17,4 +17,8 @@
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet</string>
+
+    <string name="welcome">Bienvenu</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_show_available_cars">ShowAvailableCars</string>
 </resources>
