@@ -1,0 +1,95 @@
+{
+  "taxi": [
+    {
+      "category": "SUV",
+      "transmission": "Petrol",
+      "level": "VIP",
+      "make": "Mercedes Benz",
+      "model": "S 500",
+      "number_plate": "RAC 300 M",
+      "status": "online",
+      "cost_per_km": "400$",
+      "location": {
+        "lang": 0.4333,
+        "long": 4.9404
+      },
+      "driver": {
+        "name": "Uwimana Jean Paul",
+        "phone_number": "0788227282"
+      }
+    },
+    {
+      "category": "Bus",
+      "transmission": "Hybrid",
+      "level": "Regular",
+      "make": "Toyota",
+      "model": "Corolla",
+      "number_plate": "RAA 129 S",
+      "status": "online",
+      "cost_per_km": "120$",
+      "location": {
+        "lang": 0.4333,
+        "long": 4.9404
+      },
+      "driver": {
+        "name": "HAKIZIMANA Aime",
+        "phone_number": "072839382"
+      }
+    },
+    {
+      "category": "Sedan",
+      "transmission": "Hybrid",
+      "level": "VIP",
+      "make": "Audi",
+      "model": "A3",
+      "number_plate": "RAF 620 T",
+      "status": "online",
+      "cost_per_km": "230$",
+      "location": {
+        "lang": 0.4333,
+        "long": 4.9404
+      },
+      "driver": {
+        "name": "RWIVANGA Peter",
+        "phone_number": "073738833"
+      }
+    },
+    {
+      "category": "Sedan",
+      "transmission": "Hybrid",
+      "level": "Regular",
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "number_plate": "RAA 965 D",
+      "status": "online",
+      "cost_per_km": "310$",
+      "location": {
+        "lang": 0.4333,
+        "long": 4.9404
+      },
+      "driver": {
+        "name": "HIGIRO George",
+        "phone_number": "078277722"
+      }
+    },
+    {
+      "category": "Sedan",
+      "transmission": "Diesel",
+      "level": "Regular",
+      "make": "Mercedes Benz",
+      "model": "S 500",
+      "number_plate": "RAC 300 M",
+      "status": "online",
+      "cost_per_km": "400$",
+      "location": {
+        "lang": 0.4333,
+        "long": 4.9404
+      },
+      "driver": {
+        "name": "Uwimana Jean Paul",
+        "phone_number": "0788227282"
+      }
+    }
+
+  ]
+}

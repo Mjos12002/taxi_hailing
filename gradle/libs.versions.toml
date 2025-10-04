@@ -16,8 +16,10 @@ splashscreen = "1.0.1"
 googleAndroidLibrariesMapsplatformSecretsGradlePlugin = "2.0.1"
 playServicesMaps = "18.1.0"
 playServicesLocation = "21.3.0"
+gson = "2.13.2"
 
 [libraries]
+gson = { module="com.google.code.gson:gson", version.ref="gson"}
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

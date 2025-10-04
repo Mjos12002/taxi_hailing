@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "category": "bus",
+      "transmission": "Petrol",
+      "level": "VIP",
+      "make": "Mercedes Benz",
+      "model": "S 500",
+      "number_plate": "RAC 300 M",
+      "status": "online",
+      "cost_per_km": "400$",
+      "location": {
+        "latitude": -1.9076415937127238,
+        "longitude": 30.079785027331614
+      },
+      "driver": {
+        "name": "Uwimana Jean Paul",
+        "phone_number": "0788227282"
+      }
+    },
+    {
+      "category": "bus",
+      "transmission": "Hybrid",
+      "level": "Regular",
+      "make": "Toyota",
+      "model": "Corolla",
+      "number_plate": "RAA 129 S",
+      "status": "online",
+      "cost_per_km": "120$",
+      "location": {
+        "latitude": -1.9064835212277822,
+        "longitude": 30.076909699288564
+      },
+      "driver": {
+        "name": "HAKIZIMANA Aime",
+        "phone_number": "072839382"
+      }
+    },
+    {
+      "category": "car",
+      "transmission": "Hybrid",
+      "level": "VIP",
+      "make": "Audi",
+      "model": "A3",
+      "number_plate": "RAF 620 T",
+      "status": "online",
+      "cost_per_km": "230$",
+      "location": {
+        "latitude": -1.9027090573527372,
+        "longitude": 30.077038445320337
+      },
+      "driver": {
+        "name": "RWIVANGA Peter",
+        "phone_number": "073738833"
+      }
+    },
+    {
+      "category": "car",
+      "transmission": "Hybrid",
+      "level": "Regular",
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "number_plate": "RAA 965 D",
+      "status": "online",
+      "cost_per_km": "310$",
+      "location": {
+        "latitude": -1.904746411039617,
+        "longitude": 30.080407299818543
+      },
+      "driver": {
+        "name": "HIGIRO George",
+        "phone_number": "078277722"
+      }
+    },
+    {
+      "category": "jeep",
+      "transmission": "Diesel",
+      "level": "Regular",
+      "make": "Mercedes Benz",
+      "model": "S 500",
+      "number_plate": "RAC 300 M",
+      "status": "online",
+      "cost_per_km": "400$",
+      "location": {
+        "latitude": -1.9016582113981368,
+        "longitude": 30.0799996042276
+      },
+      "driver": {
+        "name": "Uwimana Jean Paul",
+        "phone_number": "0788227282"
+      }
+    }
+  ]
+}

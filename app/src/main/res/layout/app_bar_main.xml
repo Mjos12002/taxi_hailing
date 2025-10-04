@@ -28,16 +28,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_margin="5sp"
+            android:layout_margin="10sp"
             android:elevation="20sp"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="#FAFAFA"
             app:cardCornerRadius="5sp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:padding="5sp">
+                android:padding="10sp">
 
                 <RelativeLayout
                     android:id="@+id/rl_location_info"
@@ -111,16 +111,17 @@
                         android:layout_toEndOf="@id/img_destination"/>
                 </RelativeLayout>
                 <Button
+                    android:id="@+id/btn_book_taxi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/more_icon"
                     android:layout_below="@id/rl_destination"
                     android:layout_alignParentEnd="true"
-                    android:text="Commande"
-                    android:padding="10sp"
-                    android:minHeight="0sp"/>
-
-
+                    android:text="réserver un taxi"
+                    android:minHeight="0sp"
+                    android:layout_marginTop="10sp"
+                    android:textColor="#FF9E03"
+                    android:background="@drawable/order_button_background"/>
 
             </RelativeLayout>
 
