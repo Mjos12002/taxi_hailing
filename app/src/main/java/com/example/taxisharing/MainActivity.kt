@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationManager
@@ -48,6 +47,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.coroutines.launch
 import androidx.core.graphics.createBitmap
 import com.example.taxisharing.model.car.CarModel
+import com.google.android.gms.maps.model.Marker
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -80,8 +81,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         // Click event to book a taxi
         binding.root.findViewById<Button>(R.id.btn_book_taxi).setOnClickListener {
             val filename = "taxi.json"
-            //val data = FileUtil().readTextFromAsset(filename, applicationContext)
-            //Log.i("TAXI-SHARING-INFORMATION", data)
             lifecycleScope.launch {
                 carViewModel.getCardInformation(filename, applicationContext)
             }
@@ -89,26 +88,35 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Listen for changes in card view model
         carViewModel.cardResponseLiveData.observe(this, Observer {
-            val n = MapPlotter()
-            it.data?.forEach { it ->
-                lifecycleScope.launch {
-                    //n.plotIcon(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()))
-                    addCarIcons(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()), it)
+            try{
+                if(it.data?.isNotEmpty() == true) {
+                    displayBottomDialog(this)
+                    it.data.forEach { it ->
+                        lifecycleScope.launch {
+                            //n.plotIcon(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()))
+                            addCarIcons(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()), it)
+                        }
+                    }
                 }
+            }catch (e: Exception) {
+                Log.i("TAXI-SHARING-INFORMATION", e.message!!)
             }
         })
     }
 
     suspend fun addCarIcons(map: GoogleMap, location: LatLng, data: CarModel) {
+
         try {
+            val drawableId = resources.getIdentifier(data.category, "drawable", packageName)
             if(map != null) {
                 map.addMarker(
                     MarkerOptions()
                         .position(location)
-                        .title(data.status)
+                        .title(data.make + " " + data.model)
                         .icon(bitmapFromVector(
-                            getApplicationContext(),
-                            "R.drawable.${data.category}".toInt())))
+                            applicationContext,
+                            drawableId))
+                )
             }else {
                 Log.i("TAXI-SHARING-INFORMATION", "Map is empty or null")
             }
@@ -237,7 +245,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
@@ -248,4 +255,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    fun displayBottomDialog(context: Context) {
+        val dialog = BottomSheetDialog(context)
+        val inflater = layoutInflater.inflate(R.layout.car_list_dialog, null)
+        dialog.setCancelable(true)
+        dialog.setContentView(inflater)
+        dialog.show()
+    }
+
 }
