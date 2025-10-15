@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F7F7F7"
+    android:padding="5sp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:layout_marginBottom="3dp"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:background="@drawable/car_list_bg">
+
+            <TextView
+                android:id="@+id/tv_car_make"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mercedes BENZ"
+                android:textColor="@color/black"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_car_availability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available"
+                android:textColor="@color/black"
+                android:layout_below="@+id/tv_car_make"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

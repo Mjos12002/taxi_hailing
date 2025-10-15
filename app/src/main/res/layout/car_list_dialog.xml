@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10sp"
+    android:background="#F7F7F7">
 
     <TextView
+        android:id="@+id/tv_car_available_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Available Cars"
-        android:textColor="@color/black"/>
+        android:text="@string/available_car"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10sp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#001824"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_car_availability"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        tools:listitem="@layout/car_available_list"
+        android:layout_below="@id/tv_car_available_title"
+        android:background="#F7F7F7"/>
 
 </RelativeLayout>

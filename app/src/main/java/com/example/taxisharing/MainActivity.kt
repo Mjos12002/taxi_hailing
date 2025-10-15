@@ -29,7 +29,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.taxisharing.databinding.ActivityMainBinding
 import com.example.taxisharing.utils.GeoCodingUtil
-import com.example.taxisharing.utils.MapPlotter
 import com.example.taxisharing.viewmodel.car.CarViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -46,8 +45,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.coroutines.launch
 import androidx.core.graphics.createBitmap
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.taxisharing.adapter.CarListAdapter
 import com.example.taxisharing.model.car.CarModel
-import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -81,22 +82,32 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         // Click event to book a taxi
         binding.root.findViewById<Button>(R.id.btn_book_taxi).setOnClickListener {
             val filename = "taxi.json"
-            lifecycleScope.launch {
-                carViewModel.getCardInformation(filename, applicationContext)
+            try {
+                displayBottomDialog(this, carViewModel)
+//                lifecycleScope.launch {
+//                    carViewModel.getCardInformation(filename, applicationContext)
+//                }
+            }catch (e: Exception) {
+                Log.i("TAXI-SHARING-INFORMATION", "hello error ${e}")
             }
+
         }
 
         // Listen for changes in card view model
         carViewModel.cardResponseLiveData.observe(this, Observer {
             try{
+                Toast.makeText(applicationContext, "Before evaluation", Toast.LENGTH_LONG).show()
                 if(it.data?.isNotEmpty() == true) {
-                    displayBottomDialog(this)
+                    //displayBottomDialog(this)
                     it.data.forEach { it ->
+                        Toast.makeText(applicationContext, "For each", Toast.LENGTH_LONG).show()
                         lifecycleScope.launch {
                             //n.plotIcon(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()))
                             addCarIcons(mMap, LatLng(it.location.latitude.toDouble(), it.location.longitude.toDouble()), it)
                         }
                     }
+                }else{
+                    Toast.makeText(applicationContext, "Is null", Toast.LENGTH_LONG).show()
                 }
             }catch (e: Exception) {
                 Log.i("TAXI-SHARING-INFORMATION", e.message!!)
@@ -256,12 +267,29 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun displayBottomDialog(context: Context) {
-        val dialog = BottomSheetDialog(context)
-        val inflater = layoutInflater.inflate(R.layout.car_list_dialog, null)
-        dialog.setCancelable(true)
-        dialog.setContentView(inflater)
-        dialog.show()
+    fun displayBottomDialog(context: Context, carViewModel: CarViewModel) {
+        try{
+                lifecycleScope.launch {
+                    val taxi = carViewModel.loadCardInformation("taxi.json", context)
+
+                    val dialog = BottomSheetDialog(context)
+                    val inflater = layoutInflater.inflate(R.layout.car_list_dialog, null)
+                    val rv = inflater.findViewById<RecyclerView>(R.id.rv_car_availability)
+                    val rlLayout = LinearLayoutManager(context)
+                    rv.layoutManager = rlLayout
+                    val carAvailabilityAdapter = CarListAdapter(taxi.data!!)
+                    rv.adapter = carAvailabilityAdapter
+                    dialog.setCancelable(true)
+                    dialog.setContentView(inflater)
+                    dialog.show()
+                }
+
+        }catch (e: Exception) {
+            Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+            Log.i("TAXI-SHARING-INFORMATION", e.message!!)
+        }
+
+
     }
 
 }

@@ -22,4 +22,6 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_show_available_cars">ShowAvailableCars</string>
     <string name="order_taxi">Commander un taxi</string>
+    <string name="your_location">Vous etes ici,</string>
+    <string name="available_car">Choisissez une voiture</string>
 </resources>

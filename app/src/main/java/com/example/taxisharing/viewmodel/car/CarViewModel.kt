@@ -19,4 +19,8 @@ class CarViewModel: ViewModel() {
         _carResponseMutableLiveData.postValue(res)
     }
 
+    suspend fun loadCardInformation(fileName: String, context: Context): CarResponseModel {
+        return CarRepository().getCardDataFromFile(fileName, context)
+    }
+
 }

@@ -40,7 +40,12 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.retrofit)
+    implementation(libs.adapter.rxjava)
+    implementation(libs.logging.interceptor)
+    implementation(libs.picasso)
+    implementation(libs.converter.gson)
+    implementation(libs.recyclerview)
     implementation(libs.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -30,8 +30,7 @@
         <item name="windowSplashScreenAnimatedIcon">@mipmap/launcher_icon</item>
     </style>
 
-    <style name="Theme.TaxiSharing.ShowAvailableCars" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-    </style>
+    <style name="Theme.TaxiSharing.ShowAvailableCars" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
 
     <style name="Theme.Taxi.Sharing" parent="android:Theme.Material.Light.NoActionBar" />
 
@@ -56,6 +55,11 @@
     </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.TaxiSharing.Welcome" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TaxiSharing.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
