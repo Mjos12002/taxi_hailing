@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.vehicle.VehicleFragment"
+    android:background="@drawable/main_background"
+    android:padding="10sp">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="10sp"
+        android:background="@drawable/input_container_bg">
+
+        <Spinner
+            android:id="@+id/sp_vehicle_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            style="@style/Theme.TaxiSharing.EditText"
+            android:background="@drawable/signup_input_bg"/>
+
+        <EditText
+            android:id="@+id/et_car_make"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.TaxiSharing.EditText"
+            android:background="@drawable/signup_input_bg"
+            android:hint="@string/car_make"
+            android:layout_below="@id/sp_vehicle_category"/>
+
+        <EditText
+            android:id="@+id/et_car_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.TaxiSharing.EditText"
+            android:background="@drawable/signup_input_bg"
+            android:hint="@string/car_model"
+            android:layout_below="@id/et_car_make"/>
+
+        <EditText
+            android:id="@+id/et_number_plate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.TaxiSharing.EditText"
+            android:background="@drawable/signup_input_bg"
+            android:hint="@string/number_plate"
+            android:layout_below="@id/et_car_model"/>
+
+        <EditText
+            android:id="@+id/et_number_of_seats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.TaxiSharing.EditText"
+            android:background="@drawable/signup_input_bg"
+            android:hint="@string/number_of_seats"
+            android:layout_below="@id/et_number_plate"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create"
+            android:background="@drawable/button_bg"
+            android:textColor="#fff"
+            android:layout_below="@id/et_number_of_seats"
+            android:layout_marginTop="30sp"
+            android:minHeight="0sp"
+            android:padding="8sp"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

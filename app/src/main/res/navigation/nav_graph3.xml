@@ -3,26 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph3"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/SigInFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.taxisharing.ui.signin.FirstFragment"
+        android:id="@+id/SigInFragment"
+        android:name="com.example.taxisharing.ui.signin.SignInFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_signin">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_open_signup_fragment"
+            app:destination="@id/SignUpFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.taxisharing.ui.signin.SecondFragment"
+        android:id="@+id/SignUpFragment"
+        android:name="com.example.taxisharing.ui.signup.SignUpFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_signup">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_open_vehicle_fragment"
+            app:destination="@id/VehicleFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/VehicleFragment"
+        android:name="com.example.taxisharing.ui.vehicle.VehicleFragment"
+        android:label="Vehicle"
+        tools:layout="@layout/fragment_vehicle">
+
     </fragment>
 </navigation>

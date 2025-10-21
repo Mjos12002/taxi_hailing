@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaxiSharing.NoActionBar">
         <activity
-            android:name=".ui.signin.SignIn"
+            android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.TaxiSharing.NoActionBar" />
         <!--
@@ -36,7 +36,7 @@
             android:value="AIzaSyBOFA-452G_Vj1TzjiotIJ6ZS_MSbI_fhg" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.signin.SignIn"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>

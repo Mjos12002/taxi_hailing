@@ -11,7 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
+    <string name="first_fragment_label">Sign In</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -24,4 +24,22 @@
     <string name="order_taxi">Commander un taxi</string>
     <string name="your_location">Vous etes ici,</string>
     <string name="available_car">Choisissez une voiture</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="password">Mot de passe</string>
+    <string name="signin">Se connecter</string>
+    <string name="connect">Connectez</string>
+    <string name="firstname">Nom</string>
+    <string name="lastname">Prenom</string>
+    <string name="phonenumber">No. Telephone</string>
+    <string name="email">Addresse electronique</string>
+    <string name="forgot_account">Compte oublie? Creer un</string>
+    <string name="signup">Submit</string>
+    <string name="create">Creer</string>
+    <string name="create_account">Creation de compte</string>
+    <string name="car_make">Car Make</string>
+    <string name="car_model">Car Model</string>
+    <string name="number_plate">Number plate</string>
+    <string name="number_of_seats">Number of seats</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

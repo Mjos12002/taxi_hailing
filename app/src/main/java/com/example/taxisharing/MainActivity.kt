@@ -48,7 +48,7 @@ import androidx.core.graphics.createBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taxisharing.adapter.CarListAdapter
-import com.example.taxisharing.model.car.CarModel
+import com.example.taxisharing.model.vehicle.VehicleModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         })
     }
 
-    suspend fun addCarIcons(map: GoogleMap, location: LatLng, data: CarModel) {
+    suspend fun addCarIcons(map: GoogleMap, location: LatLng, data: VehicleModel) {
 
         try {
             val drawableId = resources.getIdentifier(data.category, "drawable", packageName)

@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taxisharing.R
-import com.example.taxisharing.model.car.CarModel
+import com.example.taxisharing.model.vehicle.VehicleModel
 
 // CarListAdapter is used to display the list of cars near the customer
-class CarListAdapter(private val carList: List<CarModel>): RecyclerView.Adapter<CarListAdapter.CarListAdapterViewHolder>() {
+class CarListAdapter(private val carList: List<VehicleModel>): RecyclerView.Adapter<CarListAdapter.CarListAdapterViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
