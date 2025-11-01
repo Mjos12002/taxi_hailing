@@ -4,7 +4,7 @@
         android:radius="8sp"/>
     <stroke
         android:width="1sp"
-        android:color="#FFA600"/>
+        android:color="#015974"/>
     <solid
-        android:color="#FFA600"/>
+        android:color="#015974"/>
 </shape>

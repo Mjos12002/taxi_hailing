@@ -8,9 +8,9 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.taxisharing.R
-import com.example.taxisharing.model.vehicle.VehicleItemModel
+import com.example.taxisharing.model.vehicle.VehicleCategoryModel
 
-class VehicleSpinnerAdapter(private val context: Context, private val items: List<VehicleItemModel>) : BaseAdapter() {
+class VehicleCategoryAdapter(private val context: Context, private val items: List<VehicleCategoryModel>) : BaseAdapter() {
 
     override fun getCount(): Int = items.size
 
@@ -23,7 +23,7 @@ class VehicleSpinnerAdapter(private val context: Context, private val items: Lis
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.vehicle_category_items, parent, false)
 
-        val item = getItem(position) as VehicleItemModel
+        val item = getItem(position) as VehicleCategoryModel
 
         // Bind data to views
         val icon = view.findViewById<ImageView>(R.id.iv_vehicle_icon)

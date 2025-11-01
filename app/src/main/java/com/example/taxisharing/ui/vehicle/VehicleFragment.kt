@@ -7,9 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.taxisharing.R
-import com.example.taxisharing.adapter.VehicleSpinnerAdapter
+import com.example.taxisharing.adapter.VehicleCategoryAdapter
+import com.example.taxisharing.adapter.VehicleMakeAdapter
+import com.example.taxisharing.adapter.VehicleModelAdapter
 import com.example.taxisharing.databinding.FragmentVehicleBinding
-import com.example.taxisharing.model.vehicle.VehicleItemModel
+import com.example.taxisharing.model.vehicle.VehicleCategoryModel
+import com.example.taxisharing.model.vehicle.VehicleMakeModel
+import com.example.taxisharing.model.vehicle.VehicleModelModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,10 +37,23 @@ class VehicleFragment : Fragment() {
     private val binding get() = _binding!!
 
     // List of category of vehicle
-    val vehicleCategory = listOf<VehicleItemModel>(
-        VehicleItemModel(R.drawable.car, "Car"),
-        VehicleItemModel(R.drawable.bus, "Bus"),
-        VehicleItemModel(R.drawable.jeep, "SUV")
+    val vehicleCategory = listOf<VehicleCategoryModel>(
+        VehicleCategoryModel(R.drawable.car, "Car"),
+        VehicleCategoryModel(R.drawable.bus, "Bus"),
+        VehicleCategoryModel(R.drawable.jeep, "SUV")
+    )
+
+    val vehicleMake = listOf<VehicleMakeModel>(
+        VehicleMakeModel(1, "Mercedes Benz"),
+        VehicleMakeModel(2, "Toyota"),
+        VehicleMakeModel(3, "Hyundai"),
+        VehicleMakeModel(4, "BMW")
+    )
+
+    val vehicleModel = listOf<VehicleModelModel>(
+        VehicleModelModel(1, "S400", 1),
+        VehicleModelModel(2, "Land Cruiser", 2),
+        VehicleModelModel(3, "3 Series", 4)
     )
 
     override fun onCreateView(
@@ -52,10 +69,18 @@ class VehicleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Create a variable to hold the vehicle spinner adapter
-        val vehicleAdapter = VehicleSpinnerAdapter(requireContext(), vehicleCategory)
+        val vehicleCategoryAdapter = VehicleCategoryAdapter(requireContext(), vehicleCategory)
+        val vehicleMakeAdapter = VehicleMakeAdapter(requireContext(), vehicleMake)
+        val vehicleModelAdapter = VehicleModelAdapter(requireContext(), vehicleModel)
+
         // Initialize the spinner
-        val spnVehicle = binding.spVehicleCategory
-        spnVehicle.adapter = vehicleAdapter
+        val spnVehicleCategory = binding.spVehicleCategory
+        val spnVehicleModel = binding.spVehicleModel
+        val spnVehicleMake = binding.spVehicleMake
+
+        spnVehicleCategory.adapter = vehicleCategoryAdapter
+        spnVehicleModel.adapter = vehicleModelAdapter
+        spnVehicleMake.adapter = vehicleMakeAdapter
 
         Log.i("TAXI-INFORMATION", "Using this feature for now")
     }

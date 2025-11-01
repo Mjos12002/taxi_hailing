@@ -24,7 +24,6 @@ class CarListAdapter(private val carList: List<VehicleModel>): RecyclerView.Adap
         position: Int
     ) {
         holder.apply {
-            Log.i("TAXI-SHARING-INFORMATION", "${carList[position]}")
             tvCarMake.text = carList[position].make
             tvCarAvailability.text = carList[position].model
         }

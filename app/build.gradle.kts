@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -23,6 +23,8 @@ rxJavaVersion = "2.9.0"
 loggingInterceptorVersion = "4.10.0"
 picassoVersion ="2.71828"
 converterGsonVersion = "2.9.0"
+navigationFragmentKtxVersion = "2.9.5"
+navigationUiKtxVersion = "2.9.5"
 
 [libraries]
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
@@ -46,6 +48,8 @@ androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscree
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerViewVersin" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtxVersion" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

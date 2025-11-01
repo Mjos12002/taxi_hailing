@@ -65,7 +65,8 @@
                 android:background="@drawable/button_bg"
                 android:textColor="#FFFFFF"
                 android:minHeight="0sp"
-                android:padding="8sp"/>
+                android:padding="8sp"
+                android:fontFamily="sans-serif-thin"/>
 
         </RelativeLayout>
 
@@ -77,8 +78,8 @@
         android:layout_height="wrap_content"
         android:text="@string/forgot_account"
         android:layout_below="@id/rl_signin"
-        android:textColor="#FD7700"
-        android:fontFamily="sans-serif-medium"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-light"
         android:layout_marginTop="20sp"
         android:layout_alignParentEnd="true"/>
 

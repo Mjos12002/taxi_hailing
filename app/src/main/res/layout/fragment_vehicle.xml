@@ -16,31 +16,35 @@
         android:padding="10sp"
         android:background="@drawable/input_container_bg">
 
+        <TextView
+            android:id="@+id/tv_vehicle_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+
         <Spinner
             android:id="@+id/sp_vehicle_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
             style="@style/Theme.TaxiSharing.EditText"
-            android:background="@drawable/signup_input_bg"/>
+            android:background="@drawable/signup_input_bg"
+            android:layout_below="@id/tv_vehicle_category"/>
 
-        <EditText
-            android:id="@+id/et_car_make"
+        <Spinner
+            android:id="@+id/sp_vehicle_make"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Theme.TaxiSharing.EditText"
             android:background="@drawable/signup_input_bg"
-            android:hint="@string/car_make"
             android:layout_below="@id/sp_vehicle_category"/>
 
-        <EditText
-            android:id="@+id/et_car_model"
+        <Spinner
+            android:id="@+id/sp_vehicle_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Theme.TaxiSharing.EditText"
             android:background="@drawable/signup_input_bg"
-            android:hint="@string/car_model"
-            android:layout_below="@id/et_car_make"/>
+            android:layout_below="@id/sp_vehicle_make"/>
 
         <EditText
             android:id="@+id/et_number_plate"
@@ -49,7 +53,7 @@
             style="@style/Theme.TaxiSharing.EditText"
             android:background="@drawable/signup_input_bg"
             android:hint="@string/number_plate"
-            android:layout_below="@id/et_car_model"/>
+            android:layout_below="@id/sp_vehicle_model"/>
 
         <EditText
             android:id="@+id/et_number_of_seats"

@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="2sp"
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/tv_vehicle_text"
+        android:id="@+id/tv_model_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:layout_centerVertical="true"
-        android:textColor="@android:color/black" />
-
-    <ImageView
-        android:id="@+id/iv_vehicle_icon"
-        android:layout_width="25sp"
-        android:layout_height="25sp"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_alignParentEnd="true"/>
-
+        android:textColor="@android:color/black"/>
 
 </RelativeLayout>
